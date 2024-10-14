@@ -94,3 +94,23 @@ def brpc_workspace():
         remote = "https://github.com/google/googletest",
         branch = "v1.10.x",
     )
+
+    http_archive(
+        name = "faiss",
+        build_file = "//:bazel/faiss.BUILD",
+        strip_prefix = "faiss-1.7.4",
+        url = "https://github.com/facebookresearch/faiss/archive/refs/tags/v1.7.4.tar.gz",
+    )
+
+    http_archive(
+        name = "rocksdb",
+        url = "https://github.com/facebook/rocksdb/archive/refs/tags/v6.29.5.tar.gz",
+        strip_prefix = "rocksdb-6.29.5",
+        build_file = "//:bazel/rocksdb.BUILD",
+    )
+
+    git_repository(
+        name = "com_github_brpc_braft",
+        remote = "https://github.com/baidu/braft.git",
+        tag = "v1.1.2",
+    )
