@@ -45,6 +45,7 @@ cc_binary(
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
         "@apache_brpc//:butil",
+        "//server/src/hello:hello",
     ],
     copts = COPTS,
 )

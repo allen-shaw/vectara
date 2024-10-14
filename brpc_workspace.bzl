@@ -89,3 +89,8 @@ def brpc_workspace():
         url = "https://github.com/apache/brpc/archive/refs/tags/1.10.0.tar.gz"
     )
 
+    git_repository(
+        name = "gtest",
+        remote = "https://github.com/google/googletest",
+        branch = "v1.10.x",
+    )
