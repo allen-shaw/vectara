@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-workspace(name = "brpc_test")
+workspace(name = "vectara")
 
 load("@//:brpc_workspace.bzl", "brpc_workspace")
 brpc_workspace();

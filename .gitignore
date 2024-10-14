@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# bazel
+bazel-bin
+bazel-testlogs
+bazel-vectara
+bazel-out
