@@ -21,26 +21,11 @@ COPTS = [
 ]
 
 
-# pb的编译
-proto_library(
-    name = "http_proto",
-    srcs = [
-        "proto/helloworld.proto",
-    ],
-)
-# 将pb编译声明为一个依赖dep
-cc_proto_library(
-    name = "cc_http_proto",
-    deps = [
-        ":http_proto",
-    ],
-)
-
 cc_binary(
     name = "vectara",
-    srcs = ["server/server.cc"],
+    srcs = ["server.cc"],
     deps = [
-        ":cc_http_proto",
+        "//proto:cc_http_proto",
         "@apache_brpc//:brpc",
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
