@@ -16,14 +16,35 @@
 # Thie empty BUILD.bazel file is required to make Bazel treat
 # this directory as a package.
 
+COPTS = [
+    "-DGFLAGS_NS=google"
+]
+
+
+# pb的编译
+proto_library(
+    name = "http_proto",
+    srcs = [
+        "proto/helloworld.proto",
+    ],
+)
+# 将pb编译声明为一个依赖dep
+cc_proto_library(
+    name = "cc_http_proto",
+    deps = [
+        ":http_proto",
+    ],
+)
 
 cc_binary(
-    name = "test",
-    srcs = ["test.cc"],
+    name = "vectara",
+    srcs = ["server/server.cc"],
     deps = [
+        ":cc_http_proto",
         "@apache_brpc//:brpc",
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
         "@apache_brpc//:butil",
     ],
+    copts = COPTS,
 )
