@@ -1,4 +1,5 @@
 licenses(["notice"])
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "faiss",
@@ -50,7 +51,7 @@ cc_library(
         "-lpthread",
     ],
     deps = [
-        "//external:openblas",
+        "@com_github_xianyi_OpenBLAS//:openblas",
     ],
     visibility = ["//visibility:public"],
 )
