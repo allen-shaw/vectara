@@ -36,7 +36,7 @@ def brpc_workspace():
 
     http_archive(
         name = "com_google_protobuf",  # 2021-10-29T00:04:02Z
-        build_file = "third-party/protobuf.BUILD",
+        build_file = "//third-party/com_google_protobuf:protobuf.BUILD",
         patch_cmds = [
             "sed -i protobuf.bzl -re '4,4d;417,508d'",
         ],
@@ -62,7 +62,7 @@ def brpc_workspace():
 
     http_archive(
         name = "com_github_madler_zlib",  # 2017-01-15T17:57:23Z
-        build_file = "third-party/zlib.BUILD",
+        build_file = "//third-party/com_github_madler_zlib:zlib.BUILD",
         sha256 = "c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
         strip_prefix = "zlib-1.2.11",
         urls = [
