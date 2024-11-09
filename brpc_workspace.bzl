@@ -110,10 +110,10 @@ def brpc_workspace():
     )
 
     http_archive(
-        name = "rocksdb",
+        name = "com_github_facebook_rocksdb",
         url = "https://github.com/facebook/rocksdb/archive/refs/tags/v6.29.5.tar.gz",
         strip_prefix = "rocksdb-6.29.5",
-        build_file = "third-party/rocksdb.BUILD",
+        build_file = "//third-party/com_github_facebook_rocksdb:rocksdb.BUILD",
     )
 
     git_repository(
