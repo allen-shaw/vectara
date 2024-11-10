@@ -74,7 +74,7 @@ def brpc_workspace():
     native.new_local_repository(
         name = "openssl",
         path = "/usr",
-        build_file = "third-party/openssl.BUILD",
+        build_file = "//third-party/openssl:openssl.BUILD",
     )
 
     http_archive(
@@ -85,14 +85,14 @@ def brpc_workspace():
 
     http_archive(
         name = "apache_brpc",
-        strip_prefix = "brpc-1.10.0",
-        url = "https://github.com/apache/brpc/archive/refs/tags/1.10.0.tar.gz"
+        strip_prefix = "brpc-1.11.0",
+        url = "https://github.com/apache/brpc/archive/refs/tags/1.11.0.tar.gz"
     )
 
     git_repository(
         name = "gtest",
         remote = "https://github.com/google/googletest",
-        branch = "v1.10.x",
+        branch = "v1.15.2",
     )
 
     http_archive(
