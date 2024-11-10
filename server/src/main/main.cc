@@ -3,7 +3,7 @@
 #include <brpc/server.h>
 #include <brpc/restful.h>
 #include "proto/helloworld.pb.h"
-#include "src/hello/hello.h"
+#include "server/src/hello/hello.h"
 
 DEFINE_int32(port, 50051, "TCP Port of this server");
 DEFINE_int32(idle_timeout_s, -1, "Connection will be closed if there is no "

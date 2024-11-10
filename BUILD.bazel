@@ -16,21 +16,4 @@
 # Thie empty BUILD.bazel file is required to make Bazel treat
 # this directory as a package.
 
-COPTS = [
-    "-DGFLAGS_NS=google"
-]
 
-
-cc_binary(
-    name = "vectara",
-    srcs = ["server.cc"],
-    deps = [
-        "//proto:cc_http_proto",
-        "@apache_brpc//:brpc",
-        "@apache_brpc//:bthread",
-        "@apache_brpc//:bvar",
-        "@apache_brpc//:butil",
-        "//server/src/hello:hello"
-    ],
-    copts = COPTS,
-)

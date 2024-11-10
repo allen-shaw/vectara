@@ -55,7 +55,7 @@ def brpc_workspace():
 
     http_archive(
         name = "com_github_google_leveldb",
-        build_file = "third-party/leveldb.BUILD",
+        build_file = "//third-party/com_github_google_leveldb:leveldb.BUILD",
         strip_prefix = "leveldb-a53934a3ae1244679f812d998a4f16f2c7f309a6",
         url = "https://github.com/google/leveldb/archive/a53934a3ae1244679f812d998a4f16f2c7f309a6.tar.gz"
     )

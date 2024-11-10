@@ -23,14 +23,15 @@ COPTS = [
 
 cc_binary(
     name = "vectara",
-    srcs = ["server.cc"],
+    srcs = ["main.cc"],
     deps = [
         "//proto:cc_http_proto",
         "@apache_brpc//:brpc",
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
         "@apache_brpc//:butil",
-        "//server/src/hello:hello"
+        "//server/src/hello:hello",
+        "//server/src/index:index"
     ],
     copts = COPTS,
 )
