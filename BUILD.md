@@ -14,5 +14,10 @@ follow [bazelisk](https://github.com/bazelbuild/bazelisk)
 
 ## build vectara
 ```bash
-bazel build //:vectara
+bazel build //server/src/main:vectara
+```
+
+## gen compile_commands.json
+```bash
+bazel run @hedron_compile_commands//:refresh_all
 ```
