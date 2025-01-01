@@ -30,7 +30,8 @@ cc_binary(
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
         "@apache_brpc//:butil",
-        "//server/src/index:index"
+        "//server/src/index:index",
+        "//server/src/server:server"
     ],
     copts = COPTS,
 )

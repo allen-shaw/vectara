@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package vertara.index;
+package vectara.index;
 option go_package = "github.com/allen-shaw/vectara/proto";
 
 option cc_generic_services = false;
