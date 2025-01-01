@@ -45,3 +45,8 @@ sdk，提供多种语言的sdk(python, go等)
 ### CLI
 
 go语言编写的命令行客户端
+
+## 语言规范
+
+1. 按照google c++ guide修改
+2. 移除中文注释
