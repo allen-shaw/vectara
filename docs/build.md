@@ -27,3 +27,7 @@ bazel build //server/src/main:vectara
 ```bash
 bazel run @hedron_compile_commands//:refresh_all
 ```
+
+
+## run bazel test
+bazel test --test_output=all :xxx_test
