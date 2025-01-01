@@ -5,6 +5,7 @@
 1. 参考tensorflow: 移除src目录
 2. bazel包含go代码的编译，相当于使用bazel管理整个项目
 3. grpc server应该独立为一个目录
+4. server中，应该是vectara server包含rpc server,再包含http server
 
 ## 系统设计
 

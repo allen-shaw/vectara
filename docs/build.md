@@ -28,6 +28,9 @@ bazel build //server/src/main:vectara
 bazel run @hedron_compile_commands//:refresh_all
 ```
 
-
 ## run bazel test
-bazel test --test_output=all :xxx_test
+
+```bash
+cd ${sub_module} # e.g. cd server/src/index
+bazel test --test_output=all :xxx_test # e.g.bazel test --test_output=all :index_tes
+```
