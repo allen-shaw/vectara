@@ -9,5 +9,10 @@
         "--compile-commands-dir=${workspaceFolder}/",
         "--header-insertion=never",
         "--query-driver=**"
-    ]
+    ],
+    "protoc": {
+        "options": [
+            "--proto_path=<path of your proto files>"
+        ]
+    }
 }
