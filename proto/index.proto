@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package vertara.index;
+option go_package = "github.com/allen-shaw/vectara/proto";
+
+option cc_generic_services = false;
+
+enum IndexType {
+    IndexType_Unknown = 0;
+    IndexType_Flat = 1;
+}
