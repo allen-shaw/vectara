@@ -32,5 +32,12 @@ bazel run @hedron_compile_commands//:refresh_all
 
 ```bash
 cd ${sub_module} # e.g. cd server/src/index
+# run all testcases
 bazel test --test_output=all :xxx_test # e.g.bazel test --test_output=all :index_tes
+
+# test one testcase
+bazel test --test_output=all --test_arg=--gtest_filter=TestSuite.test :xxx_test
+
+# e.g.
+#bazel test --test_output=all --test_arg=--gtest_filter=TestFaissIndex.InsertAndSearchVectors :index_test
 ```
