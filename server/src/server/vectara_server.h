@@ -1,9 +1,10 @@
 #pragma once
 
 #include "proto/rpc_service.pb.h"
+#include "server/src/index/faiss_index.h"
 
 class VectaraServer : public vectara::rpc::RpcService {
- public:
+public:
   VectaraServer();
   virtual ~VectaraServer();
 
@@ -16,4 +17,7 @@ class VectaraServer : public vectara::rpc::RpcService {
                        const ::vectara::rpc::SearchRequest* request,
                        ::vectara::rpc::SearchReply* response,
                        ::google::protobuf::Closure* done);  
+
+private:
+  std::unique_ptr<FaissIndex> index;
 };

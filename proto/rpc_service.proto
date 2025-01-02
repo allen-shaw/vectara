@@ -9,26 +9,26 @@ option go_package = "github.com/allen-shaw/vectara/proto";
 option cc_generic_services = true;
 
 service RpcService {
-    rpc Insert (InsertRequest) returns (InsertReply) {}
-    rpc Search (SearchRequest) returns (SearchReply) {}
+  rpc Insert (InsertRequest) returns (InsertReply) {}
+  rpc Search (SearchRequest) returns (SearchReply) {}
 }
 
 message InsertRequest {
-    repeated float vectors = 1;
-    int64 id = 2;
-    index.IndexType indexType = 3;
+  repeated float vectors = 1;
+  int64 id = 2;
+  index.IndexType index_type = 3;
 }
 
 message InsertReply {
-
 }
 
 message SearchRequest {
-    repeated float vectors = 1;
-    int32 k = 2;
-    index.IndexType indexType = 3;
+  repeated float vectors = 1;
+  int32 k = 2;
+  index.IndexType index_type = 3;
 }
 
 message SearchReply {
-
+  repeated int64 vectors = 1;
+  repeated fixed64 distances = 2;
 }
