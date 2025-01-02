@@ -15,10 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
 
 BAZEL_SKYLIB_VERSION = "1.1.1"  # 2021-09-27T17:33:49Z
 
@@ -57,7 +55,7 @@ def brpc_workspace():
         name = "com_github_google_leveldb",
         build_file = "//third-party/com_github_google_leveldb:leveldb.BUILD",
         strip_prefix = "leveldb-a53934a3ae1244679f812d998a4f16f2c7f309a6",
-        url = "https://github.com/google/leveldb/archive/a53934a3ae1244679f812d998a4f16f2c7f309a6.tar.gz"
+        url = "https://github.com/google/leveldb/archive/a53934a3ae1244679f812d998a4f16f2c7f309a6.tar.gz",
     )
 
     http_archive(
@@ -86,7 +84,7 @@ def brpc_workspace():
     http_archive(
         name = "apache_brpc",
         strip_prefix = "brpc-1.11.0",
-        url = "https://github.com/apache/brpc/archive/refs/tags/1.11.0.tar.gz"
+        url = "https://github.com/apache/brpc/archive/refs/tags/1.11.0.tar.gz",
     )
 
     git_repository(
@@ -107,6 +105,13 @@ def brpc_workspace():
         build_file = "//third-party/com_github_facebookresearch_faiss:faiss.BUILD",
         strip_prefix = "faiss-1.7.4",
         url = "https://github.com/facebookresearch/faiss/archive/refs/tags/v1.7.4.tar.gz",
+    )
+
+    http_archive(
+        name = "com_github_nmslib_hnswlib",
+        build_file = "//third-party/com_github_nmslib_hnswlib:hnswlib.BUILD",
+        strip_prefix = "hnswlib-0.8.0",
+        url = "https://github.com/nmslib/hnswlib/archive/refs/tags/v0.8.0.tar.gz",
     )
 
     http_archive(

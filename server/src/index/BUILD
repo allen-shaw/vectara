@@ -8,6 +8,7 @@ cc_library(
     srcs = ["faiss_index.cc"],
     deps = [
         "@com_github_facebookresearch_faiss//:faiss",
+        "@com_github_nmslib_hnswlib//:hnswlib",
         "@apache_brpc//:butil",
     ]
 )
