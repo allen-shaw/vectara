@@ -19,6 +19,6 @@ CompileFlags:
           -I/usr/include/x86_64-linux-gnu,
           -I/usr/include,
           -isystem,
-          -std=c++23,
+          -std=c++20,
     ]
 ```
