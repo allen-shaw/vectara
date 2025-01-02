@@ -8,6 +8,7 @@
 4. server中，应该是vectara server包含rpc server,再包含http server
 5. 使用grpc错误校验
 6. 使用protobuf 参数验证
+7. 添加clang-tidy
 
 ## 系统设计
 

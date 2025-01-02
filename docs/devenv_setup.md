@@ -4,10 +4,12 @@
 
 Q: How to fix VSCode Error: `In included file: 'stdlib.h' file not found`
 
-A: 
+A:
+
 1. Installing the libstdc++ library, by running `sudo apt install libstdc++-14-dev`
 
 2. Adding config `~/.config/clangd/config.yaml` file
+
 ```yaml
 CompileFlags:
     Add: [
@@ -21,4 +23,6 @@ CompileFlags:
           -isystem,
           -std=c++20,
     ]
+Diagnostics:
+  Suppress: builtin_definition
 ```
