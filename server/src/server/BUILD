@@ -14,6 +14,7 @@ cc_library(
     ],
     deps = [
         "//proto:cc_vectara_proto",
+        "//server/src/index:index",
         "@apache_brpc//:brpc",
         "@apache_brpc//:bthread",
         "@apache_brpc//:bvar",
