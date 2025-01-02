@@ -6,6 +6,8 @@
 2. bazel包含go代码的编译，相当于使用bazel管理整个项目
 3. grpc server应该独立为一个目录
 4. server中，应该是vectara server包含rpc server,再包含http server
+5. 使用grpc错误校验
+6. 使用protobuf 参数验证
 
 ## 系统设计
 
