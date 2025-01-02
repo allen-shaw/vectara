@@ -55,3 +55,4 @@ go语言编写的命令行客户端
 2. 移除中文注释
 3. 将裸指针替换成std::uniq_ptr<?>
 4. 返回错误类型，而不是直接返回int
+5. brpc_workspace改成vectara_workspace
