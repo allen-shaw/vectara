@@ -1,0 +1,17 @@
+package(default_visibility = ["//visibility:public"])
+
+# pb的编译
+proto_library(
+    name = "vectara_proto",
+    srcs = [
+        "index.proto",
+        "rpc_service.proto"
+    ],
+)
+# 将pb编译声明为一个依赖dep
+cc_proto_library(
+    name = "cc_vectara_proto",
+    deps = [
+        ":vectara_proto",
+    ],
+)

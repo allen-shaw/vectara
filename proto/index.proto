@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package vectara.index;
+option go_package = "github.com/allen-shaw/vectara/proto";
+
+option cc_generic_services = false;
+
+enum IndexType {
+  INDEX_TYPE_UNSPECIFIED = 0;
+  INDEX_TYPE_FLAT = 1;
+  INDEX_TYPE_HNSW = 2;
+}
+
+enum MetricType {
+  METRIC_TYPE_UNSPECIFIED = 0;
+  METRIC_TYPE_L2 = 1;
+  METRIC_TYPE_IP = 2;
+}

@@ -1,0 +1,18 @@
+{
+    "clangd.path": "/usr/bin/clangd",
+    "clangd.arguments": [
+        // 在后台自动分析文件(基于 complie_commands，我们用CMake生成)
+        "--background-index",
+        // 同时开启的任务数量
+        "-j=4",
+        // compelie_commands.json 文件的目录位置
+        "--compile-commands-dir=${workspaceFolder}/",
+        "--header-insertion=never",
+        "--query-driver=**"
+    ],
+    "protoc": {
+        "options": [
+            "--proto_path=<path of your proto files>"
+        ]
+    }
+}
