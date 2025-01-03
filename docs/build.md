@@ -5,6 +5,11 @@
 ```bash
 sudo apt install build-essential
 ```
+## install bazel buildifier
+
+```bash
+go install github.com/bazelbuild/buildtools/buildifier@latest
+```
 
 ## install openssl
 
