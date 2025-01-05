@@ -1,0 +1,1 @@
+exports_files(["lz4.BUILD"])

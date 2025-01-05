@@ -53,7 +53,7 @@ def brpc_workspace():
 
     http_archive(
         name = "com_github_google_leveldb",
-        build_file = "//third-party/com_github_google_leveldb:leveldb.BUILD",
+        build_file = "@//third-party/com_github_google_leveldb:leveldb.BUILD",
         strip_prefix = "leveldb-a53934a3ae1244679f812d998a4f16f2c7f309a6",
         url = "https://github.com/google/leveldb/archive/a53934a3ae1244679f812d998a4f16f2c7f309a6.tar.gz",
     )
@@ -89,6 +89,7 @@ def brpc_workspace():
 
     git_repository(
         name = "gtest",
+        build_file = "//third-party/gtest:gtest.BUILD",
         remote = "https://github.com/google/googletest",
         branch = "v1.15.2",
     )
@@ -125,4 +126,37 @@ def brpc_workspace():
         name = "com_github_brpc_braft",
         remote = "https://github.com/baidu/braft.git",
         tag = "v1.1.2",
+    )
+
+    http_archive(
+        name = "snappy",  # 2017-08-25
+        build_file = "//third-party/snappy:snappy.BUILD",
+        sha256 = "3dfa02e873ff51a11ee02b9ca391807f0c8ea0529a4924afa645fbf97163f9d4",
+        strip_prefix = "snappy-1.1.7",
+        urls = [
+            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/snappy/archive/1.1.7.tar.gz",
+            "https://github.com/google/snappy/archive/1.1.7.tar.gz",
+        ],
+    )
+
+    #zstd
+    http_archive(
+        name = "zstd",
+        urls = ["https://github.com/facebook/zstd/archive/v1.4.4.tar.gz"],
+        strip_prefix = "zstd-1.4.4",
+        build_file = "//third-party/zstd:zstd.BUILD",
+    )
+
+    http_archive(
+        name = "lz4",
+        urls = ["https://github.com/lz4/lz4/archive/v1.9.2.tar.gz"],
+        strip_prefix = "lz4-1.9.2",
+        build_file = "//third-party/lz4:lz4.BUILD",
+    )
+
+    http_archive(
+        name = "com_github_google_glog",
+        strip_prefix = "glog-a6a166db069520dbbd653c97c2e5b12e08a8bb26",
+        url = "https://github.com/google/glog/archive/a6a166db069520dbbd653c97c2e5b12e08a8bb26.tar.gz",
+        build_file = "//third-party/com_github_google_glog:glog.BUILD",
     )
