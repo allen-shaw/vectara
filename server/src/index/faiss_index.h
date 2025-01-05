@@ -3,6 +3,7 @@
 #include <faiss/Index.h>
 #include <vector>
 
+// should change name to FlatIndex
 class FaissIndex {
 public:
     FaissIndex(faiss::Index* index);
