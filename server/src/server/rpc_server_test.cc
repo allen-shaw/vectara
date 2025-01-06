@@ -8,6 +8,7 @@
 
 #include "proto/rpc_service.pb.h"
 
+
 TEST(TestRpcServer, NewRpcServer) {
   RpcServer* server = new RpcServer(50051);
   EXPECT_TRUE(server != nullptr);
@@ -44,7 +45,7 @@ void SendRequest() {
   request.add_vectors(0.8);
   request.add_vectors(9.9);
   request.set_id(2);
-  request.set_index_type(vectara::index::IndexType::IndexType_Flat);
+  request.set_index_type(vectara::index::IndexType::INDEX_TYPE_FLAT);
 
   stub.Insert(&cntl, &request, &reply, nullptr);
   EXPECT_TRUE(!cntl.Failed());
@@ -61,7 +62,7 @@ void SendRequest() {
   vectara::rpc::SearchReply search_reply;
   search_request.add_vectors(0.5);
   search_request.set_k(2);
-  search_request.set_index_type(vectara::index::IndexType::IndexType_Flat);
+  search_request.set_index_type(vectara::index::IndexType::INDEX_TYPE_FLAT);
 
   stub.Search(&cntl, &search_request, &search_reply, nullptr);
   EXPECT_TRUE(!cntl.Failed());
