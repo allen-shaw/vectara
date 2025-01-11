@@ -165,6 +165,7 @@ cc_library(
         ],
         "//conditions:default": [],
     }),
+    visibility = ["//visibility:public"],
 )
 
 cc_library(

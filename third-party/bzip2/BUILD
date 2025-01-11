@@ -1,0 +1,1 @@
+exports_files(["bzip2.BUILD"])

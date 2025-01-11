@@ -33,6 +33,13 @@ def brpc_workspace():
     )
 
     http_archive(
+      name = "com_github_facebook_rocksdb",
+      strip_prefix = "rocksdb-8.1.1",
+      url = "https://github.com/facebook/rocksdb/archive/refs/tags/v8.1.1.tar.gz",
+      build_file = "//third-party/com_github_facebook_rocksdb:rocksdb.BUILD",
+    )
+
+    http_archive(
         name = "com_google_protobuf",  # 2021-10-29T00:04:02Z
         build_file = "//third-party/com_google_protobuf:protobuf.BUILD",
         patch_cmds = [
@@ -61,7 +68,6 @@ def brpc_workspace():
     http_archive(
         name = "com_github_madler_zlib",  # 2017-01-15T17:57:23Z
         build_file = "//third-party/com_github_madler_zlib:zlib.BUILD",
-        sha256 = "c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
         strip_prefix = "zlib-1.2.11",
         urls = [
             "https://downloads.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz",
@@ -76,10 +82,11 @@ def brpc_workspace():
     )
 
     http_archive(
-        name = "com_github_gflags_gflags",
-        strip_prefix = "gflags-46f73f88b18aee341538c0dfc22b1710a6abedef",
-        url = "https://github.com/gflags/gflags/archive/46f73f88b18aee341538c0dfc22b1710a6abedef.tar.gz",
+      name = "com_github_gflags_gflags",
+      strip_prefix = "gflags-2.2.2",
+      urls = ["https://github.com/gflags/gflags/archive/v2.2.2.tar.gz"],
     )
+
 
     http_archive(
         name = "apache_brpc",
@@ -87,11 +94,11 @@ def brpc_workspace():
         url = "https://github.com/apache/brpc/archive/refs/tags/1.11.0.tar.gz",
     )
 
-    git_repository(
+    http_archive(
         name = "gtest",
         build_file = "//third-party/gtest:gtest.BUILD",
-        remote = "https://github.com/google/googletest",
-        branch = "v1.15.2",
+        url = "https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz",
+        strip_prefix = "googletest-1.15.2",
     )
 
     http_archive(
@@ -115,13 +122,6 @@ def brpc_workspace():
         url = "https://github.com/nmslib/hnswlib/archive/refs/tags/v0.8.0.tar.gz",
     )
 
-    http_archive(
-        name = "com_github_facebook_rocksdb",
-        url = "https://github.com/facebook/rocksdb/archive/refs/tags/v6.29.5.tar.gz",
-        strip_prefix = "rocksdb-6.29.5",
-        build_file = "//third-party/com_github_facebook_rocksdb:rocksdb.BUILD",
-    )
-
     git_repository(
         name = "com_github_brpc_braft",
         remote = "https://github.com/baidu/braft.git",
@@ -131,26 +131,25 @@ def brpc_workspace():
     http_archive(
         name = "snappy",  # 2017-08-25
         build_file = "//third-party/snappy:snappy.BUILD",
-        sha256 = "3dfa02e873ff51a11ee02b9ca391807f0c8ea0529a4924afa645fbf97163f9d4",
-        strip_prefix = "snappy-1.1.7",
+        strip_prefix = "snappy-1.1.8",
         urls = [
-            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/snappy/archive/1.1.7.tar.gz",
-            "https://github.com/google/snappy/archive/1.1.7.tar.gz",
+            "https://storage.googleapis.com/mirror.tensorflow.org/github.com/google/snappy/archive/1.1.8.tar.gz",
+            "https://github.com/google/snappy/archive/1.1.8.tar.gz",
         ],
     )
 
     #zstd
     http_archive(
         name = "zstd",
-        urls = ["https://github.com/facebook/zstd/archive/v1.4.4.tar.gz"],
-        strip_prefix = "zstd-1.4.4",
+        urls = ["https://github.com/facebook/zstd/archive/v1.5.2.tar.gz"],
+        strip_prefix = "zstd-1.5.2",
         build_file = "//third-party/zstd:zstd.BUILD",
     )
 
     http_archive(
         name = "lz4",
-        urls = ["https://github.com/lz4/lz4/archive/v1.9.2.tar.gz"],
-        strip_prefix = "lz4-1.9.2",
+        urls = ["https://github.com/lz4/lz4/archive/v1.9.3.tar.gz"],
+        strip_prefix = "lz4-1.9.3",
         build_file = "//third-party/lz4:lz4.BUILD",
     )
 
@@ -160,3 +159,12 @@ def brpc_workspace():
         url = "https://github.com/google/glog/archive/a6a166db069520dbbd653c97c2e5b12e08a8bb26.tar.gz",
         build_file = "//third-party/com_github_google_glog:glog.BUILD",
     )
+
+    http_archive(
+      name = "bzip2",
+      strip_prefix = "bzip2-1.0.8",
+      urls = ["https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"],
+      build_file = "//third-party/bzip2:bzip2.BUILD",
+    )
+
+    
