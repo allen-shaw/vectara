@@ -1,6 +1,10 @@
 #include "hnsw_index.h"
 #include <memory>
 
+HNSWIndex::HNSWIndex() {
+  HNSWIndex(1, 100, vectara::index::MetricType::METRIC_TYPE_L2, 16, 200);
+}
+
 HNSWIndex::HNSWIndex(int dim, int num_data, vectara::index::MetricType metric,
                      int M, int ef_construction)
     : dim(dim) {

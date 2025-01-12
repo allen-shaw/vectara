@@ -5,6 +5,7 @@
 
 class HNSWIndex {
  public:
+  HNSWIndex(); 
   HNSWIndex(int dim, int num_data, vectara::index::MetricType metric,
             int M = 16, int ef_construction = 200);
   virtual ~HNSWIndex();

@@ -167,4 +167,15 @@ def brpc_workspace():
       build_file = "//third-party/bzip2:bzip2.BUILD",
     )
 
-    
+    http_archive(
+      name = "com_github_tencent_rapidjson",
+      url = "https://github.com/Tencent/rapidjson/archive/v1.1.0.tar.gz",
+      strip_prefix = "rapidjson-1.1.0",
+      build_file = "//third-party/com_github_tencent_rapidjson:rapidjson.BUILD",
+    )
+
+    git_repository(
+      name = "com_github_brpc_braft",
+      remote = "https://github.com/baidu/braft.git",
+      tag = "v1.1.2",
+    )
